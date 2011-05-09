@@ -29,20 +29,12 @@ class Golf
     
     def hole6(n)
       (1 .. n).collect { |x|
-        if x % 15 == 0
-          'fizzbuzz'
-        elsif x % 3 == 0
-          'fizz'
-        elsif x % 5 == 0
-          'buzz'
-        else
-          x
-        end
+        x % 15 == 0 ? 'fizzbuzz' : x % 3 == 0 ? 'fizz' : x % 5 == 0 ? 'buzz' : x
       }
     end
     
     def hole8(n)
-      l=[1,1]
+      l = [1,1]
       l = l + [l[-1]+l[-2]] while l.size < n
       l
     end
