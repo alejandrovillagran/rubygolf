@@ -34,9 +34,7 @@ class Golf
     end
     
     def hole8(n)
-      l = [1,1]
-      l = l + [l[-1]+l[-2]] while l.size < n
-      l
+      n < 3 ? [1,1] : proc { |l| l + [l[-1]+l[-2]] }.call(hole8(n-1))
     end
     
     def hole9(f)
